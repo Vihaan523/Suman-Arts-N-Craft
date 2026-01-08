@@ -10,20 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
-        /* --- 1. CORE STYLES --- */
+        /* --- CORE STYLES --- */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #fffdf9; /* Cream background */
+            background-color: #fffdf9;
             color: #1a1a1a;
             font-family: 'DM Sans', sans-serif;
-            overflow-x: hidden; /* Prevents side-scrolling on mobile */
+            overflow-x: hidden;
             overflow-y: auto !important;
         }
 
-        /* --- 2. NAVIGATION --- */
+        /* --- NAVIGATION --- */
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -62,7 +62,7 @@
             font-weight: bold;
         }
 
-        /* --- 3. SECTIONS --- */
+        /* --- SECTIONS --- */
         main {
             padding: 20px;
             max-width: 1400px;
@@ -70,12 +70,12 @@
         }
 
         .section {
-            display: none; /* Hidden by default */
+            display: none;
             animation: fadeIn 0.8s ease;
         }
 
         .section.active {
-            display: block; /* Show only active section */
+            display: block;
         }
 
         @keyframes fadeIn {
@@ -83,24 +83,17 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- 4. HERO (Home) --- */
+        /* --- HERO (Home) --- */
         .hero-content {
             text-align: center;
             padding: 60px 20px;
         }
 
-        .eyebrow {
-            display: block;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #666;
-            margin-bottom: 20px;
-        }
+        /* Removed .eyebrow style since Est. 2024 is gone */
 
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem; /* Big luxury title */
+            font-size: 4rem;
             margin: 0;
             font-weight: 400;
             color: #1a1a1a;
@@ -130,7 +123,7 @@
             color: #999;
         }
 
-        /* --- 5. COLLECTIONS GRID --- */
+        /* --- COLLECTIONS GRID --- */
         .section-header {
             text-align: center;
             margin-bottom: 50px;
@@ -145,7 +138,7 @@
 
         .image-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 Columns on Desktop */
+            grid-template-columns: repeat(2, 1fr); /* 2 Columns Desktop */
             gap: 40px;
             max-width: 1000px;
             margin: 0 auto;
@@ -168,7 +161,7 @@
             text-align: center;
         }
 
-        /* --- 6. CONTACT --- */
+        /* --- CONTACT --- */
         .contact-content {
             text-align: center;
             padding: 40px 20px;
@@ -183,7 +176,7 @@
             text-decoration: none;
             display: block;
             margin-top: 20px;
-            word-wrap: break-word; /* Prevents email from going off screen */
+            word-wrap: break-word;
         }
 
         .social-icons {
@@ -194,24 +187,19 @@
             color: #1a1a1a;
         }
 
-        /* --- 📱 MOBILE FIXES (THE IMPORTANT PART) --- */
+        /* --- MOBILE FIXES --- */
         @media (max-width: 768px) {
-            
-            /* Stack Navigation */
             .navigation {
                 flex-direction: column;
                 padding: 20px;
                 gap: 20px;
             }
-
             .nav-links {
                 gap: 20px;
                 font-size: 0.8rem;
             }
-
-            /* Shrink Huge Text */
             .main-title {
-                font-size: 2.5rem; /* Smaller on phone */
+                font-size: 2.5rem;
             }
             .sub-title {
                 font-size: 1.5rem;
@@ -222,15 +210,11 @@
             .email-link {
                 font-size: 1.5rem;
             }
-
-            /* Fix the Grid: 1 Column on Phone (Looks way better) */
             .image-grid {
-                grid-template-columns: 1fr !important; /* Forces 1 item per row */
+                grid-template-columns: 1fr !important; /* 1 Column on Phone */
                 padding: 0 10px !important;
                 gap: 30px;
             }
-
-            /* Adjust Image Height for Phone */
             .image-wrapper {
                 height: 350px;
             }
@@ -252,7 +236,6 @@
     <main>
         <div id="home" class="section active">
             <div class="hero-content">
-                <span class="eyebrow">Est. 2024</span>
                 <h1 class="main-title">Suman Arts-N-Craft</h1>
                 <h2 class="sub-title">Exquisite Handcrafted Excellence</h2>
                 <div class="center-description">
@@ -297,6 +280,20 @@
                     </div>
                     <span class="item-label">Celestial Mango Wood Box</span>
                 </div>
+
+                <div class="item-grid">
+                    <div class="image-wrapper">
+                        <img src="idk.jpg" alt="" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    </div>
+                    <span class="item-label">Hand-Carved Soapstone Box</span>
+                </div>
+
+                <div class="item-grid">
+                    <div class="image-wrapper">
+                        <img src="skirts.jpg" alt="New Artifact 2" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    </div>
+                    <span class="item-label">WRAPRONS</span>
+                </div>
             
             </div>
         </div>
@@ -329,19 +326,12 @@
 
     <script>
         function switchTab(tabName) {
-            // 1. Hide all sections
             const sections = document.querySelectorAll('.section');
             sections.forEach(sec => sec.classList.remove('active'));
-
-            // 2. Show the selected section
             const activeSection = document.getElementById(tabName);
             if (activeSection) activeSection.classList.add('active');
-
-            // 3. Update Nav Links
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => link.classList.remove('active'));
-            
-            // Mark the clicked link as active
             event.target.classList.add('active');
         }
     </script>
