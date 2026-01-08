@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suman Arts-N-Craft | Heritage Design</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. CORE STYLES --- */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fffdf9; /* Cream background */
+            color: #1a1a1a;
+            font-family: 'DM Sans', sans-serif;
+            overflow-y: auto !important; /* Force scrolling */
+        }
+
+        /* --- 2. NAVIGATION --- */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            position: sticky;
+            top: 0;
+            background-color: #fffdf9;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* --- 3. SECTIONS (Tabs) --- */
+        main {
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.8s ease;
+        }
+
+        .section.active {
+            display: block; /* Show only active section */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- 4. HERO (Home) --- */
+        .hero-content {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .eyebrow {
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem; /* Big luxury title */
+            margin: 0;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+
+        .sub-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            margin: 10px 0 30px 0;
+            color: #444;
+        }
+
+        .center-description {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .brand-name-sub {
+            margin-top: 60px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+        }
+
+        /* --- 5. COLLECTIONS GRID --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .subtext {
+            color: #666;
+        }
+
+        /* --- 6. CONTACT --- */
+        .contact-content {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .email-link {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .social-icons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: #1a1a1a;
+        }
+
+        /* --- UTILITY: HIDE SCROLLBARS ON IMAGES --- */
+        img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav class="navigation">
+        <div class="logo">Suman Arts-N-Craft</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link active" onclick="switchTab('home')">Home</a>
+            <a href="#" class="nav-link" onclick="switchTab('collections')">Collections</a>
+            <a href="#" class="nav-link" onclick="switchTab('contact')">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <div id="home" class="section active">
+            <div class="hero-content">
+                <h1 class="main-title">Suman Arts-N-Craft</h1>
+                <h2 class="sub-title">Exquisite Handcrafted Excellence</h2>
+                <div class="center-description">
+                    <p>Honoring the timeless tradition of global handicrafts, we curate pieces that bridge ancient techniques with modern restraint. Each artifact is a testament to the artisan's hand, celebrating natural materials and the enduring beauty of intentional craft.</p>
+                </div>
+                <p class="brand-name-sub">Suman Arts-N-Craft</p>
+            </div>
+        </div>
+
+        <div id="collections" class="section">
+            <header class="section-header">
+                <h2 class="headline">The Collection</h2>
+                <p class="subtext">A selection of artifacts defined by material integrity and formal restraint.</p>
+            </header>
+            
+            <div class="image-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto; padding: 0 40px;">
+    
+                <div class="item-grid">
+                    <div class="image-wrapper" style="height: 400px; overflow: hidden; border-radius: 4px; background-color: #f9f9f7;">
+                        <img src="almirah.jpg" alt="Hand-Painted Almirah" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    </div>
+                    <span class="item-label" style="display: block; margin-top: 15px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; text-align: center;">Hand-Painted Almirah</span>
+                </div>
+            
+                <div class="item-grid">
+                    <div class="image-wrapper" style="height: 400px; overflow: hidden; border-radius: 4px; background-color: #f9f9f7;">
+                        <img src="mandala-box.jpg" alt="Mandala Wooden Box" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    </div>
+                    <span class="item-label" style="display: block; margin-top: 15px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; text-align: center;">Mandala Wooden Box</span>
+                </div>
+            
+                <div class="item-grid">
+                    <div class="image-wrapper" style="height: 400px; overflow: hidden; border-radius: 4px; background-color: #f9f9f7;">
+                        <img src="buddha.jpg" alt="Brass Buddha Idol" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    </div>
+                    <span class="item-label" style="display: block; margin-top: 15px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; text-align: center;">Brass Buddha Idol</span>
+                </div>
+            
+                <div class="item-grid">
+                    <div class="image-wrapper" style="height: 400px; overflow: hidden; border-radius: 4px; background-color: #f9f9f7;">
+                        <img src="sun-box.jpg" alt="Celestial Mango Wood Box" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    </div>
+                    <span class="item-label" style="display: block; margin-top: 15px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; text-align: center;">Celestial Mango Wood Box</span>
+                </div>
+            
+            </div>
+        </div>
+
+        <div id="contact" class="section">
+            <div class="contact-content">
+                <h2 class="headline">Contact</h2>
+                <p class="contact-text">For private viewing appointments, collection details, or partnership inquiries.</p>
+                
+                <div class="contact-details">
+                    <a href="mailto:sumanarts@gmail.com" class="email-link">sumanarts@gmail.com</a>
+                    <p class="phone-number" style="margin-top: 15px; letter-spacing: 1px;">+91 9953098090</p>
+                </div>
+                
+                <div class="social-icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function switchTab(tabName) {
+            // 1. Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // 2. Show the selected section
+            const activeSection = document.getElementById(tabName);
+            if (activeSection) activeSection.classList.add('active');
+
+            // 3. Update Nav Links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Find the link that was clicked and make it active (simple match)
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
